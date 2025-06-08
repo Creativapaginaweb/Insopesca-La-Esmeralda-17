@@ -2,6 +2,8 @@
 <html lang="es">
 
 <head>
+<meta name="description" content="Insopesca es el ente encargado de regular, proteger y promover el desarrollo sostenible de la pesca y la acuicultura, garantizando el aprovechamiento responsable de los recursos y el bienestar de las comunidades vinculadas al sector.">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +30,7 @@
 
         .btn {
             border: none;
-            background-color: #c279d0;
+            background-color: #ff5f55;
             padding: 2px;
             border-radius: 5px;
             font-size: 20px;
@@ -40,7 +42,7 @@
         }
 
         .btn:hover {
-            background-color: #a800d0;
+            background-color: red;
         }
 
         #totalClick {
@@ -75,7 +77,7 @@ header h2, h3 {
         }
         
         header {
-  background-color: #a800d0;
+  background-color: red;
   padding: 8px;
   margin: 0px;
 }
@@ -83,10 +85,10 @@ header h2, h3 {
 .palabra-con-sombra {
   box-shadow: -10px -10px 10px rgba(0, 0, 0, 50.5);
 }
+
 .Morro {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 50.5);
 }
-
 
 .palabra-con-sombra {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
@@ -105,7 +107,7 @@ header h2, h3 {
 }
 
 .boton {
-    background-color: #a800d0;
+    background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
@@ -121,7 +123,7 @@ header h2, h3 {
 .blackbotton {
     background-color: black;
     color: white;
-    border-color: #b945d0;
+    border-color: red;
     border-radius: 5px;
     height: 25px;
 }
@@ -163,7 +165,7 @@ header h2, h3 {
     
 <header>
     <h2><center><b><span class="palabra-con-sombra">INSOPESCA</span></b></center></h2>
-    <h3><center><span class="Morro">(LA ESMERALDA)</span></center></h3>
+    <h4><center><span class="Morro">(LA ESMERALDA 2025)</span></center></h4>
 </header>
 
     <section>
@@ -173,13 +175,14 @@ header h2, h3 {
             <input type="datetime-local" id="fecha" name="fecha" required style="width: 200px;">
             <br>
             <label for="duenoEmbarcacion">Dueño y Embarcación:</label>
-            <input type="text" id="duenoEmbarcacion" name="duenoEmbarcacion" required style="width: 300px;">
+            <input type="text" id="duenoEmbarcacion" name="duenoEmbarcacion" list="listaDuenoEmbarcacion" required style="width: 300px;">
+            <datalist id="listaDuenoEmbarcacion"></datalist>
             <br>
             <label for="responsableMuestreo">Responsable del Muestreo:</label>
             <input type="text" id="responsableMuestreo" name="responsableMuestreo" required style="width: 300px;">
             <br>
             <label for="observaciones">Observaciones:</label>
-            <textarea id="observaciones" name="observaciones" style="width: 300px; height: 17px; font-size: 9px; font-family: 'sans-serif'; font-weight: bold;"></textarea>
+            <textarea id="observaciones" name="observaciones" style="width: 300px; height: 18px; font-size: 10px; font-family: 'sans-serif'; font-weight: bold; line-height: 0.9;"></textarea>
         </fieldset>
 
         <button class="btn" data-size="12">12<span id="count12" class="counter">0</span></button>
@@ -246,15 +249,13 @@ header h2, h3 {
 
 <span class="percentageRange1"><b id="percentageRange1"></b></span>
 
-
-
   <span class="range-name">-/- <button class="talla"><b>(≥17)</b></button></span></span>
   <a id="totalRango17-17.5-18-18.5-19-19.5-20-20.5-21-21.5-22-22.5-23"></a>
 
 <span class="percentageRange2"><b id="percentageRange2"></b></span>
 </div>
 </fieldset>
-<p><h5><center>© Insopesca El Morro</center></h5></p>
+<p><h5><center>© <a href="copyright.html">Insopesca El Morro</a></center></h5></p>
 <p><h6><center>creativapaginaweb@gmail.com</center></h6></p>
 
     <script type="text/javascript">
@@ -301,8 +302,6 @@ header h2, h3 {
             }
         });
         
-        
-
         // Clear all counters and ranges
         btnClear.onclick = function() {
             sizeCounts = {};
@@ -317,10 +316,6 @@ header h2, h3 {
             }
         };
         
-        
-
-
-
         function calculatePercentages() {
             const totalCount = parseInt(totalElm.textContent);
 
@@ -349,10 +344,6 @@ header h2, h3 {
             calculatePercentages();
         };
 
-
-
-
-
 function limpiarFormulario() {
   // Recorrer todos los campos de entrada
   const inputs = document.querySelectorAll('input[type="text"]');
@@ -374,17 +365,9 @@ function limpiarFormulario() {
   }
 }
 
-
-
-
-
-
-
-
-
         function verificarContraseña() {
             const contraseña = window.prompt("Introduzca la contraseña:", "");
-            if (contraseña === "InsopescaLaEsmeralda") {
+            if (contraseña === "Esmeralda") {
                 // Mostrar el contenido del archivo HTML
                 document.getElementById("contenido").style.display = "block";
             }
@@ -395,8 +378,6 @@ function limpiarFormulario() {
             }
         }
         
-
-
 // Obtener el elemento del botón "Limpiar"
 const btnLimpiar = document.getElementById('btnLimpiar');
 
@@ -422,7 +403,44 @@ btnLimpiar.onclick = function() {
   // ... su código existente para restablecer contadores y totales ...
 };
 
+// Array de Dueños y Embarcaciones sugeridos
+const duenosEmbarcaciones = [
+  
+
+
+  // Agrega aquí más opciones si lo deseas
+];
+
+// Obtener el datalist
+const datalist = document.getElementById('listaDuenoEmbarcacion');
+
+// Llenar el datalist con las opciones del array
+duenosEmbarcaciones.forEach(function(item) {
+  const option = document.createElement('option');
+  option.value = item;
+  datalist.appendChild(option);
+});
+
     </script>
+    
+    <!-- Aviso de Derechos de Autor y Propiedad Intelectual
+© Insopesca El Morro
+
+Aunque este sitio web y su contenido aparecen bajo el nombre de © Insopesca El Morro con el objetivo de apoyar y representar a la inspectoría donde trabajo, declaro lo siguiente:
+
+Cláusula I: Propiedad del Código y Funcionalidad
+El código fuente, las funcionalidades, el diseño y toda la lógica subyacente de este sitio web han sido creados y desarrollados íntegramente por Emmanuel Manosalva. Todas las mejoras, modificaciones y adaptaciones futuras deberán ser autorizadas expresamente por su creador.
+
+Cláusula II: Prohibición de Modificación y Alteración
+Queda estrictamente prohibida la modificación, alteración, adaptación o reutilización del código fuente y la funcionalidad del sitio web sin el consentimiento previo y por escrito de Emmanuel Manosalva. Cualquier cambio no autorizado podrá ser considerado como una violación de los derechos de autor y será susceptible de acciones legales.
+
+Cláusula III: Uso Exclusivo y Autorización
+El uso de este sitio web y su código fuente es exclusivo bajo la autorización de Emmanuel Manosalva. En el caso de que el creador decida retirar su autorización, el uso de la herramienta deberá cesar inmediatamente. El incumplimiento de esta condición podría acarrear consecuencias legales.
+
+Cláusula IV: Prohibición de Copia y Plagio
+Queda expresamente prohibida la copia, distribución, plagio o reproducción total o parcial del código fuente y su funcionalidad sin la autorización expresa de Emmanuel Manosalva. Toda infracción a esta disposición será considerada como una violación de los derechos de autor y podrá ser perseguida conforme a la ley.
+
+Este aviso se aplica a todos los usuarios, administradores y terceros relacionados con el sitio web. -->
 
 </body>
 
